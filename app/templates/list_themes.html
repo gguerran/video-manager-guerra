@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>{{t}}</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+<body>
+	<body>
+		<div class="container">
+			<h3>{{ h }}</h3>
+			<hr>
+			{% if videos[0] %}
+			<a class="btn btn-info" href='./'>Home</a>
+			<hr>
+			<h3>Themes List</h3>
+			<hr>
+			<div class="row">
+				<div class="col-lg-3">
+					<h5><b>Theme</b></h5>
+				</div>
+				<div class="col-lg-1">
+					<h5><b>Classification</b></h5>
+				</div>
+			</div>
+			{% for video in videos %}
+			<hr>
+			<div class="row">
+				<div class="col-lg-3">{{ video["theme"] }}</div>
+				<div class="col-lg-3">{{ video["classification"] }}</div>
+			</div>
+			{% endfor %}
+			{% else %}
+				<h4>No videos add</h4>
+			{% endif %}
+		</div>
+		<script src="https://use.fontawesome.com/2ff92ef24e.js"></script>
+	</body>
+</html>
